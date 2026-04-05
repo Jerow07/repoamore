@@ -4,6 +4,9 @@ import { AlignRight, X, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import BackgroundEffect from './components/BackgroundEffect';
 import Services from './components/Services';
+import Portfolio from './components/Portfolio';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 const AnimatedTitle = ({ text }: { text: string }) => {
   const letters = Array.from(text);
@@ -77,12 +80,12 @@ function App() {
             Abi Estudio.
           </motion.div>
           
-          <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-brand-400">
+          <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-brand-400 uppercase tracking-widest">
             <a href="#inicio" className="hover:text-brand-300 transition-colors">Inicio</a>
             <a href="#servicios" className="hover:text-brand-300 transition-colors">Servicios</a>
             <a href="#trabajos" className="hover:text-brand-300 transition-colors">Portafolio</a>
             <a href="#contacto" className="hover:text-brand-300 transition-colors">Contacto</a>
-            <button className="px-6 py-2.5 bg-brand-400 text-brand-100 rounded-full hover:bg-brand-400/90 hover:scale-105 transition-all shadow-lg shadow-brand-400/20">
+            <button className="px-6 py-2.5 bg-brand-400 text-brand-100 rounded-full hover:bg-brand-400/90 hover:scale-105 transition-all shadow-lg shadow-brand-400/20 uppercase text-[10px] tracking-widest font-black">
               Agendar Asesoría
             </button>
           </div>
@@ -91,6 +94,20 @@ function App() {
             {isMenuOpen ? <X size={28} /> : <AlignRight size={28} />}
           </button>
         </div>
+
+        {/* Mobile Menu Overlay */}
+        {isMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="absolute top-full left-0 w-full bg-brand-100 border-b border-brand-200/50 p-8 flex flex-col gap-6 text-brand-400 font-bold uppercase tracking-widest md:hidden shadow-2xl"
+          >
+            <a href="#inicio" onClick={() => setIsMenuOpen(false)}>Inicio</a>
+            <a href="#servicios" onClick={() => setIsMenuOpen(false)}>Servicios</a>
+            <a href="#trabajos" onClick={() => setIsMenuOpen(false)}>Portafolio</a>
+            <a href="#contacto" onClick={() => setIsMenuOpen(false)}>Contacto</a>
+          </motion.div>
+        )}
       </nav>
 
       {/* HERO SECTION */}
@@ -106,7 +123,7 @@ function App() {
             transition={{ delay: 0.2 }}
             className="text-sm md:text-base font-semibold uppercase tracking-[0.3em] text-brand-300 mb-6"
           >
-            Marketing Integral & E-Commerce
+            Marketing Integral & Desarrollo de Vanguardia
           </motion.p>
 
           <AnimatedTitle text="Abi Estudio" />
@@ -118,7 +135,7 @@ function App() {
             className="mt-8 max-w-2xl text-lg md:text-xl text-brand-400/80 font-medium leading-relaxed"
           >
             Elevamos el potencial de tu marca a través de estrategias digitales orientadas a resultados. 
-            Diseño, contenido y performance en un solo lugar.
+            Diseño, contenido y tecnología en un solo lugar.
           </motion.p>
 
           <motion.div 
@@ -127,11 +144,11 @@ function App() {
             transition={{ delay: 1.8 }}
             className="mt-12 flex flex-col sm:flex-row items-center gap-4"
           >
-            <button className="flex items-center gap-2 px-8 py-4 bg-brand-400 text-brand-100 rounded-full font-bold hover:bg-brand-400/90 transition-all hover:-translate-y-1 shadow-xl shadow-brand-400/20 group">
+            <a href="#servicios" className="flex items-center gap-2 px-8 py-4 bg-brand-400 text-brand-100 rounded-full font-bold hover:bg-brand-400/90 transition-all hover:-translate-y-1 shadow-xl shadow-brand-400/20 group uppercase text-sm tracking-widest">
               Nuestros Servicios
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </button>
-            <a href="#contacto" className="px-8 py-4 text-brand-400 font-bold border border-brand-200 rounded-full hover:bg-brand-200/20 transition-all">
+            </a>
+            <a href="#contacto" className="px-8 py-4 text-brand-400 font-bold border border-brand-200 rounded-full hover:bg-brand-200/20 transition-all uppercase text-sm tracking-widest">
               Hablemos
             </a>
           </motion.div>
@@ -139,10 +156,9 @@ function App() {
       </section>
 
       <Services />
-
-      <section id="trabajos" className="min-h-screen w-full flex items-center justify-center">
-        <h2 className="text-4xl font-serif text-brand-400 opacity-30">[Sección Trabajos en construcción]</h2>
-      </section>
+      <Portfolio />
+      <Contact />
+      <Footer />
     </div>
   );
 }
