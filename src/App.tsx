@@ -4,6 +4,7 @@ import { AlignRight, X, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import BackgroundEffect from './components/BackgroundEffect';
 import Services from './components/Services';
+import About from './components/About';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -82,6 +83,7 @@ function App() {
           
           <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-brand-400 uppercase tracking-widest">
             <a href="#inicio" className="hover:text-brand-300 transition-colors">Inicio</a>
+            <a href="#nosotros" className="hover:text-brand-300 transition-colors">Nosotros</a>
             <a href="#servicios" className="hover:text-brand-300 transition-colors">Servicios</a>
             <a href="#trabajos" className="hover:text-brand-300 transition-colors">Portafolio</a>
             <a href="#contacto" className="hover:text-brand-300 transition-colors">Contacto</a>
@@ -100,6 +102,7 @@ function App() {
             className="absolute top-full left-0 w-full bg-brand-100 border-b border-brand-200/50 p-8 flex flex-col gap-6 text-brand-400 font-bold uppercase tracking-widest md:hidden shadow-2xl"
           >
             <a href="#inicio" onClick={() => setIsMenuOpen(false)}>Inicio</a>
+            <a href="#nosotros" onClick={() => setIsMenuOpen(false)}>Sobre Nosotros</a>
             <a href="#servicios" onClick={() => setIsMenuOpen(false)}>Servicios</a>
             <a href="#trabajos" onClick={() => setIsMenuOpen(false)}>Portafolio</a>
             <a href="#contacto" onClick={() => setIsMenuOpen(false)}>Contacto</a>
@@ -152,6 +155,7 @@ function App() {
         </div>
       </section>
 
+      <About />
       <Services />
       <Portfolio />
       <Contact />
