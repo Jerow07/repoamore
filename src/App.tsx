@@ -85,9 +85,6 @@ function App() {
             <a href="#servicios" className="hover:text-brand-300 transition-colors">Servicios</a>
             <a href="#trabajos" className="hover:text-brand-300 transition-colors">Portafolio</a>
             <a href="#contacto" className="hover:text-brand-300 transition-colors">Contacto</a>
-            <button className="px-6 py-2.5 bg-brand-400 text-brand-100 rounded-full hover:bg-brand-400/90 hover:scale-105 transition-all shadow-lg shadow-brand-400/20 uppercase text-[10px] tracking-widest font-black">
-              Agendar Asesoría
-            </button>
           </div>
 
           <button className="md:hidden text-brand-400" onClick={() => setIsMenuOpen(!isMenuOpen)}>
