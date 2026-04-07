@@ -28,7 +28,7 @@ const services = [
   },
   {
     title: "Desarrollo Web Custom",
-    description: "Sitios web y aplicaciones a medida, ultrarrápidos y desarrollados con tecnología de punta.",
+    description: "React con animaciones avanzadas (Framer Motion, Three.js). Optimización de imágenes (lazy loading), diseño UI/UX en Figma y Backends escalables (Firebase, Strapi).",
     icon: <Globe size={32} strokeWidth={1.5} />,
     delay: 0.5
   },
