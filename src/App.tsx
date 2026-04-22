@@ -45,7 +45,7 @@ const AnimatedTitle = ({ text }: { text: string }) => {
 
   return (
     <motion.h1
-      className="text-6xl md:text-8xl lg:text-9xl font-serif font-black tracking-tighter"
+      className="text-5xl md:text-8xl lg:text-9xl font-serif font-black tracking-tighter leading-[0.9]"
       variants={container}
       initial="hidden"
       animate="visible"
@@ -54,7 +54,7 @@ const AnimatedTitle = ({ text }: { text: string }) => {
         <motion.span 
           variants={child} 
           key={index} 
-          className="inline-block text-transparent bg-clip-text bg-gradient-to-br from-brand-400 to-brand-300 drop-shadow-sm pb-2 pr-2"
+          className="inline-block text-transparent bg-clip-text bg-gradient-to-br from-brand-400 to-brand-300 drop-shadow-sm pb-2 pr-0.5"
         >
           {letter === " " ? "\u00A0" : letter}
         </motion.span>
