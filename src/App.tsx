@@ -76,9 +76,10 @@ function App() {
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-serif font-black text-brand-400 tracking-tight"
+            className="flex items-center gap-3 text-2xl font-serif font-black text-brand-400 tracking-tight"
           >
-            Abi Estudio.
+            <img src="/favicon.png" alt="Logo" className="w-8 h-8 object-contain drop-shadow-sm rounded-full border-2 border-brand-300/20 p-0.5" />
+            <span>Abi Estudio.</span>
           </motion.div>
           
           <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-brand-400 uppercase tracking-widest">
