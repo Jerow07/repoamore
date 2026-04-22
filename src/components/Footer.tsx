@@ -74,10 +74,10 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-brand-100/10 flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="flex flex-col items-center md:items-start gap-1">
-          <p className="text-sm text-brand-100/40 font-medium">
+          <p className="text-sm text-white/80 font-medium">
             © {new Date().getFullYear()} Abi Estudio. Todos los derechos reservados.
           </p>
-          <p className="text-xs text-brand-300/50 font-bold uppercase tracking-widest">
+          <p className="text-xs text-white/60 font-bold uppercase tracking-widest">
             Esta web fue diseñada & desarrollada por nosotros.
           </p>
         </div>
