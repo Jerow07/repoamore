@@ -53,7 +53,7 @@ export default function Footer() {
         {/* Links Side */}
         <div className="grid grid-cols-2 gap-16 md:gap-24">
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest mb-8 text-brand-300">Explorar</h4>
+            <h4 className="text-sm font-bold uppercase tracking-widest mb-8 text-white">Explorar</h4>
             <ul className="space-y-4 font-medium">
               <li><a href="#inicio" className="hover:text-brand-300 transition-colors">Inicio</a></li>
               <li><a href="#servicios" className="hover:text-brand-300 transition-colors">Servicios</a></li>
@@ -62,7 +62,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest mb-8 text-brand-300">Legal</h4>
+            <h4 className="text-sm font-bold uppercase tracking-widest mb-8 text-white">Legal</h4>
             <ul className="space-y-4 font-medium">
               <li><a href="#" className="hover:text-brand-300 transition-colors">Privacidad</a></li>
               <li><a href="#" className="hover:text-brand-300 transition-colors">Términos</a></li>
