@@ -29,7 +29,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-sm font-bold text-brand-300 uppercase tracking-widest">Email</p>
-                <p className="text-xl font-bold text-brand-400">hola@abiestudio.com</p>
+                <p className="text-xl font-bold text-brand-400">abi.est.mkt@gmail.com</p>
               </div>
             </div>
 
