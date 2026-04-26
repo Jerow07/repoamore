@@ -35,7 +35,7 @@ export default function Footer() {
           </p>
           
           <div className="flex items-center gap-4 mt-8">
-            <a href="mailto:abi.est.mkt@gmail.com" className="w-12 h-12 rounded-full border border-brand-100/20 flex items-center justify-center hover:bg-brand-100 hover:text-brand-400 transition-all">
+            <a href="mailto:geronimoparra@hotmail.com" className="w-12 h-12 rounded-full border border-brand-100/20 flex items-center justify-center hover:bg-brand-100 hover:text-brand-400 transition-all">
               <Mail size={20} />
             </a>
             <a href="#" className="w-12 h-12 rounded-full border border-brand-100/20 flex items-center justify-center hover:bg-brand-100 hover:text-brand-400 transition-all">
