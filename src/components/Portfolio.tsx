@@ -66,11 +66,7 @@ export default function Portfolio() {
               
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-brand-400/90 via-brand-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-10">
-                 <motion.div
-                   initial={{ y: 20, opacity: 0 }}
-                   whileHover={{ y: 0, opacity: 1 }}
-                   transition={{ duration: 0.3 }}
-                 >
+                 <div className="translate-y-5 group-hover:translate-y-0 transition-all duration-300 delay-100">
                     <span className="text-brand-200 text-sm font-bold tracking-widest uppercase mb-2 block">{project.category}</span>
                     <h3 className="text-3xl font-serif font-bold text-white mb-4">{project.title}</h3>
                     <div className="flex items-center gap-4">
@@ -78,7 +74,7 @@ export default function Portfolio() {
                         Ver Proyecto <ArrowUpRight size={16} />
                       </button>
                     </div>
-                 </motion.div>
+                 </div>
               </div>
 
               {/* Floating Icon */}

@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import type { Variants } from 'framer-motion';
-import { AlignRight, X, ArrowRight } from 'lucide-react';
-import { useState } from 'react';
+import { AlignRight, X, ArrowRight, ChevronDown } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import BackgroundEffect from './components/BackgroundEffect';
 import Services from './components/Services';
 import About from './components/About';
@@ -65,9 +65,28 @@ const AnimatedTitle = ({ text }: { text: string }) => {
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('inicio');
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
+
+  useEffect(() => {
+    const sections = ['inicio', 'nosotros', 'servicios', 'trabajos', 'contacto'];
+    const observers = sections.map(id => {
+      const el = document.getElementById(id);
+      if (!el) return null;
+      const observer = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActiveSection(id); },
+        { threshold: 0.4 }
+      );
+      observer.observe(el);
+      return observer;
+    });
+    return () => observers.forEach(obs => obs?.disconnect());
+  }, []);
 
   return (
     <div className="w-full min-h-screen font-sans selection:bg-brand-300 selection:text-white relative">
+      <motion.div style={{ scaleX }} className="fixed top-0 left-0 right-0 h-[3px] bg-brand-300 z-[100] origin-left" />
       <BackgroundEffect />
       
       {/* NAVEGACIÓN */}
@@ -83,11 +102,24 @@ function App() {
           </motion.div>
           
           <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-brand-400 uppercase tracking-widest">
-            <a href="#inicio" className="hover:text-brand-300 transition-colors">Inicio</a>
-            <a href="#nosotros" className="hover:text-brand-300 transition-colors">Nosotros</a>
-            <a href="#servicios" className="hover:text-brand-300 transition-colors">Servicios</a>
-            <a href="#trabajos" className="hover:text-brand-300 transition-colors">Portafolio</a>
-            <a href="#contacto" className="hover:text-brand-300 transition-colors">Contacto</a>
+            {[
+              { href: '#inicio', label: 'Inicio', id: 'inicio' },
+              { href: '#nosotros', label: 'Nosotros', id: 'nosotros' },
+              { href: '#servicios', label: 'Servicios', id: 'servicios' },
+              { href: '#trabajos', label: 'Portafolio', id: 'trabajos' },
+              { href: '#contacto', label: 'Contacto', id: 'contacto' },
+            ].map(({ href, label, id }) => (
+              <a
+                key={id}
+                href={href}
+                className={`relative pb-1 transition-colors ${activeSection === id ? 'text-brand-300' : 'hover:text-brand-300'}`}
+              >
+                {label}
+                {activeSection === id && (
+                  <motion.span layoutId="nav-indicator" className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-300 rounded-full" />
+                )}
+              </a>
+            ))}
           </div>
 
           <button className="md:hidden text-brand-400" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -154,6 +186,18 @@ function App() {
             </a>
           </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2.2, duration: 0.8 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-brand-400/40 z-10"
+        >
+          <span className="text-[10px] font-bold uppercase tracking-[0.3em]">Scroll</span>
+          <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}>
+            <ChevronDown size={20} />
+          </motion.div>
+        </motion.div>
       </section>
 
       <About />

@@ -85,10 +85,15 @@ export default function Contact() {
             <div className="space-y-2">
               <label className="text-sm font-bold text-brand-400/60 uppercase tracking-widest ml-1">Servicio de interés</label>
               <select className="w-full bg-brand-100/50 border border-brand-200/50 rounded-2xl p-5 text-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-300/50 transition-all font-medium appearance-none">
+                <option value="" disabled selected>Selecciona un servicio...</option>
+                <option>Marketing Integral</option>
+                <option>E-Commerce</option>
+                <option>Branding & Diseño</option>
+                <option>Social Media</option>
                 <option>Desarrollo Web Custom</option>
                 <option>Diseño UX / UI</option>
                 <option>Landing Pages</option>
-                <option>Mantenimiento y Evolución</option>
+                <option>Mantenimiento Web</option>
               </select>
             </div>
 

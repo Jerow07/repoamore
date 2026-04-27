@@ -1,54 +1,55 @@
 import { motion } from 'framer-motion';
-import { Megaphone, ShoppingBag, PenTool, Smartphone, Globe, Layout, Zap, Settings } from 'lucide-react';
+import { Megaphone, ShoppingBag, PenTool, Smartphone, Globe, Layout, Zap, Settings, ArrowRight } from 'lucide-react';
 
 const services = [
   {
     title: "Marketing Integral",
     description: "Estrategias de posicionamiento y planes de acción 360° para que tu marca alcance a la audiencia correcta.",
     icon: <Megaphone size={32} strokeWidth={1.5} />,
-    delay: 0.1
+    delay: 0.1,
   },
   {
     title: "E-Commerce",
     description: "Gestión, optimización y escalabilidad de tiendas online orientadas exclusivamente a la conversión.",
     icon: <ShoppingBag size={32} strokeWidth={1.5} />,
-    delay: 0.2
+    delay: 0.2,
   },
   {
     title: "Branding & Diseño",
     description: "Identidad visual premium que refleja el verdadero valor y la calidad de tus servicios o productos.",
     icon: <PenTool size={32} strokeWidth={1.5} />,
-    delay: 0.3
+    delay: 0.3,
   },
   {
     title: "Social Media",
     description: "Creación de contenido original, planificación y gestión de comunidades vibrantes.",
     icon: <Smartphone size={32} strokeWidth={1.5} />,
-    delay: 0.4
+    delay: 0.4,
   },
   {
     title: "Desarrollo Web Custom",
     description: "React con animaciones avanzadas (Framer Motion, Three.js). Optimización de imágenes (lazy loading), diseño UI/UX en Figma y Backends escalables (Firebase, Strapi).",
     icon: <Globe size={32} strokeWidth={1.5} />,
-    delay: 0.5
+    delay: 0.5,
   },
   {
     title: "Diseño UX / UI",
     description: "Interfaces intuitivas y centradas en el usuario, creadas estratégicamente para disparar conversiones.",
     icon: <Layout size={32} strokeWidth={1.5} />,
-    delay: 0.6
+    delay: 0.6,
   },
   {
     title: "Landing Pages",
     description: "Páginas de destino hiper-optimizadas, diseñadas para transformar clics en clientes reales.",
     icon: <Zap size={32} strokeWidth={1.5} />,
-    delay: 0.7
+    delay: 0.7,
   },
   {
     title: "Mantenimiento Web",
     description: "Soporte técnico, updates de rendimiento y mejoras continuas para que tu plataforma opere al máximo.",
     icon: <Settings size={32} strokeWidth={1.5} />,
-    delay: 0.8
+    delay: 0.8,
+    featured: false
   }
 ];
 
@@ -87,6 +88,21 @@ export default function Services() {
             </motion.div>
           ))}
         </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <p className="text-brand-400/50 font-medium mb-4">¿Te interesa alguno de nuestros servicios?</p>
+          <a
+            href="#contacto"
+            className="inline-flex items-center gap-2 text-brand-300 font-bold uppercase tracking-widest text-sm group hover:gap-4 transition-all duration-300"
+          >
+            Hablemos
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );

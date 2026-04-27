@@ -48,7 +48,7 @@ export default function BackgroundEffect() {
   return (
     <div 
       ref={containerRef} 
-      className="fixed inset-0 w-full h-full -z-[10] overflow-hidden pointer-events-none scale-[1.5] opacity-40" 
+      className="fixed inset-0 w-full h-full -z-[10] overflow-hidden pointer-events-none scale-[1.5] opacity-55" 
       aria-hidden="true"
     />
   );
