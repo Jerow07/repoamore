@@ -1,4 +1,4 @@
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { AlignRight, X, ArrowRight, ChevronDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
@@ -9,6 +9,7 @@ import HowItWorks from './components/HowItWorks';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import IntroScreen from './components/IntroScreen';
 
 const AnimatedTitle = ({ text }: { text: string }) => {
   const letters = Array.from(text);
@@ -65,6 +66,7 @@ const AnimatedTitle = ({ text }: { text: string }) => {
 };
 
 function App() {
+  const [hasEntered, setHasEntered] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('inicio');
   const { scrollYProgress } = useScroll();
@@ -86,7 +88,10 @@ function App() {
   }, []);
 
   return (
-    <div className="w-full min-h-screen font-sans selection:bg-brand-300 selection:text-white relative">
+    <div className={`w-full font-sans selection:bg-brand-300 selection:text-white relative ${hasEntered ? 'min-h-screen' : 'h-screen overflow-hidden'}`}>
+      <AnimatePresence>
+        {!hasEntered && <IntroScreen key="intro" onEnter={() => setHasEntered(true)} />}
+      </AnimatePresence>
       <motion.div style={{ scaleX }} className="fixed top-0 left-0 right-0 h-[3px] bg-brand-300 z-[100] origin-left" />
       <BackgroundEffect />
       
