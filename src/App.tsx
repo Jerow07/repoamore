@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import BackgroundEffect from './components/BackgroundEffect';
 import Services from './components/Services';
 import About from './components/About';
+import HowItWorks from './components/HowItWorks';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -150,39 +151,41 @@ function App() {
         <div className="absolute top-[30%] right-[10%] w-72 h-72 bg-brand-300/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
 
         <div className="max-w-7xl mx-auto w-full z-10 flex flex-col items-center text-center">
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             className="text-sm md:text-base font-semibold uppercase tracking-[0.3em] text-brand-300 mb-6"
           >
-            Marketing Integral & Desarrollo de Vanguardia
+            Agencia de Marketing & Desarrollo Web · Argentina y Latam
           </motion.p>
 
           <AnimatedTitle text="Abi Estudio" />
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 1 }}
             className="mt-8 max-w-2xl text-lg md:text-xl text-brand-400/80 font-medium leading-relaxed"
           >
-            Elevamos el potencial de tu marca a través de estrategias digitales orientadas a resultados. 
-            Diseño, contenido y tecnología en un solo lugar.
+            Sabés exactamente qué hacemos con tu marca, cuándo y por qué — cada día del proyecto.
+            Sin desaparecer. Sin sorpresas. Solo resultados reales.
           </motion.p>
 
-          <motion.div 
+
+
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.8 }}
-            className="mt-12 flex flex-col sm:flex-row items-center gap-4"
+            transition={{ delay: 1.9 }}
+            className="mt-10 flex flex-col sm:flex-row items-center gap-4"
           >
-            <a href="#servicios" className="flex items-center gap-2 px-8 py-4 bg-brand-400 text-brand-100 rounded-full font-bold hover:bg-brand-400/90 transition-all hover:-translate-y-1 shadow-xl shadow-brand-400/20 group uppercase text-sm tracking-widest">
-              Nuestros Servicios
+            <a href="#contacto" className="flex items-center gap-2 px-8 py-4 bg-brand-400 text-brand-100 rounded-full font-bold hover:bg-brand-400/90 transition-all hover:-translate-y-1 shadow-xl shadow-brand-400/20 group uppercase text-sm tracking-widest">
+              Empezá tu proyecto gratis
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
-            <a href="#contacto" className="px-8 py-4 text-brand-400 font-bold border border-brand-200 rounded-full hover:bg-brand-200/20 transition-all uppercase text-sm tracking-widest">
-              Hablemos
+            <a href="#servicios" className="px-8 py-4 text-brand-400 font-bold border border-brand-200 rounded-full hover:bg-brand-200/20 transition-all uppercase text-sm tracking-widest">
+              Ver servicios
             </a>
           </motion.div>
         </div>
@@ -201,6 +204,7 @@ function App() {
       </section>
 
       <About />
+      <HowItWorks />
       <Services />
       <Portfolio />
       <Contact />

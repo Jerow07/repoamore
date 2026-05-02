@@ -15,11 +15,10 @@ export default function Contact() {
         >
           <span className="text-brand-300 font-bold tracking-[0.2em] uppercase text-sm">Hablemos</span>
           <h2 className="text-5xl md:text-6xl font-serif font-black text-brand-400 mt-4 leading-tight">
-            ¿Listo para <br /> <span className="text-brand-300 italic">escalar</span> tu marca?
+            La primera <br /> consulta es <span className="text-brand-300 italic">gratis.</span>
           </h2>
           <p className="mt-8 text-xl text-brand-400/70 font-medium leading-relaxed max-w-lg">
-            Estamos aquí para convertir tus ideas en realidades digitales de alto impacto. 
-            Escríbenos y agendemos una asesoría.
+            Contanos sobre tu proyecto y en menos de 24 horas te respondemos con un plan concreto. Sin vueltas, sin compromisos.
           </p>
 
           <div className="mt-12 space-y-8">
@@ -94,6 +93,7 @@ export default function Contact() {
                 <option>Diseño UX / UI</option>
                 <option>Landing Pages</option>
                 <option>Mantenimiento Web</option>
+                <option>Agentes Conversacionales con IA</option>
               </select>
             </div>
 
@@ -107,7 +107,7 @@ export default function Contact() {
             </div>
 
             <button className="w-full flex items-center justify-center gap-3 py-6 bg-brand-400 text-white rounded-3xl font-bold text-lg hover:bg-brand-400/90 transition-all hover:scale-[1.02] active:scale-95 shadow-xl shadow-brand-400/20 group">
-              Enviar Mensaje
+              Quiero empezar mi proyecto
               <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </button>
           </form>

@@ -19,12 +19,12 @@ export default function About() {
               Impulsando el éxito digital con <span className="text-brand-300 italic">pasión</span> y estrategia.
             </h2>
             <p className="mt-8 text-xl text-brand-400/70 font-medium leading-relaxed">
-              En Abi Estudio, no solo creamos sitios web; construimos experiencias digitales 
-              permanentes que conectan marcas con sus audiencias de manera significativa.
+              En Abi Estudio somos tu equipo digital de confianza. Construimos marcas que conectan,
+              páginas que convierten y estrategias que generan resultados medibles.
             </p>
             <p className="mt-6 text-lg text-brand-400/60 leading-relaxed italic">
-              "Nuestra misión es transformar la visión de nuestros clientes en una realidad digital 
-              impactante, combinando creatividad sin límites con tecnología de punta."
+              "Lo que nos diferencia no es solo lo que entregamos — es que tu sabés exactamente
+              lo que está pasando cada día. Transparencia total, desde el primer paso hasta el último."
             </p>
 
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8">
@@ -46,8 +46,8 @@ export default function About() {
                 <div className="w-12 h-12 rounded-xl bg-brand-200/30 flex items-center justify-center text-brand-400 mb-4">
                   <Users size={24} />
                 </div>
-                <h4 className="font-bold text-brand-400 uppercase tracking-widest text-xs mb-1">Cercanía</h4>
-                <p className="text-sm text-brand-400/60">Tu socio estratégico en el mundo digital.</p>
+                <h4 className="font-bold text-brand-400 uppercase tracking-widest text-xs mb-1">Transparencia</h4>
+                <p className="text-sm text-brand-400/60">Seguimiento día a día. Sabés todo lo que hacemos.</p>
               </div>
             </div>
           </motion.div>

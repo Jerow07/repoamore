@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Megaphone, ShoppingBag, PenTool, Smartphone, Globe, Layout, Zap, Settings, ArrowRight } from 'lucide-react';
+import { Megaphone, ShoppingBag, PenTool, Smartphone, Globe, Layout, Zap, Settings, ArrowRight, BotMessageSquare } from 'lucide-react';
 
 const services = [
   {
@@ -7,50 +7,64 @@ const services = [
     description: "Estrategias de posicionamiento y planes de acción 360° para que tu marca alcance a la audiencia correcta.",
     icon: <Megaphone size={32} strokeWidth={1.5} />,
     delay: 0.1,
+    highlights: ["Estrategia 360° personalizada", "Segmentación de audiencia", "Métricas y resultados reales"],
   },
   {
     title: "E-Commerce",
     description: "Gestión, optimización y escalabilidad de tiendas online orientadas exclusivamente a la conversión.",
     icon: <ShoppingBag size={32} strokeWidth={1.5} />,
     delay: 0.2,
+    highlights: ["Optimización de conversiones", "Experiencia de compra fluida", "Escalabilidad sin límites"],
   },
   {
     title: "Branding & Diseño",
     description: "Identidad visual premium que refleja el verdadero valor y la calidad de tus servicios o productos.",
     icon: <PenTool size={32} strokeWidth={1.5} />,
     delay: 0.3,
+    highlights: ["Identidad visual única", "Manual de marca completo", "Diseño que genera confianza"],
   },
   {
     title: "Social Media",
     description: "Creación de contenido original, planificación y gestión de comunidades vibrantes.",
     icon: <Smartphone size={32} strokeWidth={1.5} />,
     delay: 0.4,
+    highlights: ["Contenido original y auténtico", "Comunidades con engagement real", "Calendario editorial mensual"],
   },
   {
     title: "Desarrollo Web Custom",
     description: "React con animaciones avanzadas (Framer Motion, Three.js). Optimización de imágenes (lazy loading), diseño UI/UX en Figma y Backends escalables (Firebase, Strapi).",
     icon: <Globe size={32} strokeWidth={1.5} />,
     delay: 0.5,
+    highlights: ["Rendimiento y velocidad óptimos", "Animaciones y UI de alto impacto", "Backend robusto y escalable"],
   },
   {
     title: "Diseño UX / UI",
     description: "Interfaces intuitivas y centradas en el usuario, creadas estratégicamente para disparar conversiones.",
     icon: <Layout size={32} strokeWidth={1.5} />,
     delay: 0.6,
+    highlights: ["Investigación de usuario real", "Prototipos interactivos en Figma", "Diseño orientado a conversión"],
   },
   {
     title: "Landing Pages",
     description: "Páginas de destino hiper-optimizadas, diseñadas para transformar clics en clientes reales.",
     icon: <Zap size={32} strokeWidth={1.5} />,
     delay: 0.7,
+    highlights: ["Carga ultrarrápida", "Copy persuasivo y estratégico", "A/B testing incluido"],
   },
   {
     title: "Mantenimiento Web",
     description: "Soporte técnico, updates de rendimiento y mejoras continuas para que tu plataforma opere al máximo.",
     icon: <Settings size={32} strokeWidth={1.5} />,
     delay: 0.8,
-    featured: false
-  }
+    highlights: ["Monitoreo 24/7", "Updates de seguridad y rendimiento", "Soporte técnico prioritario"],
+  },
+  {
+    title: "Agentes Conversacionales con IA",
+    description: "Potenciamos tu ecosistema digital. Asistentes virtuales autónomos 24/7 que califican leads, agendan turnos y automatizan ventas en WhatsApp e Instagram.",
+    icon: <BotMessageSquare size={32} strokeWidth={1.5} />,
+    delay: 0.9,
+    highlights: ["Atención inmediata 24/7", "Calificación automática de leads", "Reducción de costos operativos"],
+  },
 ];
 
 export default function Services() {
@@ -67,7 +81,7 @@ export default function Services() {
           <h2 className="text-5xl md:text-6xl font-serif font-black text-brand-400 mt-4">Nuestros Servicios</h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -85,6 +99,14 @@ export default function Services() {
               <p className="text-brand-400/70 font-medium leading-relaxed text-sm">
                 {service.description}
               </p>
+              <ul className="mt-5 flex flex-col gap-2 w-full">
+                {service.highlights.map((h) => (
+                  <li key={h} className="flex items-center gap-2 text-xs font-bold text-brand-300 bg-brand-300/10 rounded-xl px-3 py-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-300 shrink-0" />
+                    {h}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>
